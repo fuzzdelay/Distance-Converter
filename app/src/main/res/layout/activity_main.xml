@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/inputLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Miles Value:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputText"
+        app:layout_constraintStart_toStartOf="@+id/conversionLabel" />
+
+    <TextView
+        android:id="@+id/conversionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="300dp"
+        android:text="Conversion:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/colorButtonNormal"
+        android:clickable="true"
+        android:ems="10"
+        android:inputType="numberSigned|numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="404dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:onClick="convert"
+        android:text="Convert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+
+    <TextView
+        android:id="@+id/outputText"
+        android:layout_width="194dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="12dp"
+        android:background="?attr/colorButtonNormal"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/inputText"
+        app:layout_constraintTop_toBottomOf="@+id/convertButton" />
+
+    <TextView
+        android:id="@+id/conversionHistoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Conversion History: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/outputLabel"
+        app:layout_constraintTop_toBottomOf="@+id/outputLabel" />
+
+    <TextView
+        android:id="@+id/conversionHistory"
+        android:layout_width="376dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/colorButtonNormal"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/convertButton"
+        app:layout_constraintStart_toStartOf="@+id/convertButton"
+        app:layout_constraintTop_toBottomOf="@+id/conversionHistoryLabel" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="18dp"
+        android:onClick="clear"
+        android:text="Clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/conversionHistory" />
+
+    <TextView
+        android:id="@+id/outputLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kilometers Value:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/outputText"
+        app:layout_constraintStart_toStartOf="@+id/inputLabel" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9346939" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/m2kButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:checked="true"
+            android:onClick="radioClicked"
+            android:text="Miles to Kilometers" />
+
+        <RadioButton
+            android:id="@+id/k2mButton"
+            android:layout_width="157dp"
+            android:layout_height="33dp"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:onClick="radioClicked"
+            android:text="Kilometers to Miles" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
